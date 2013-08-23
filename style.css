@@ -34,7 +34,7 @@ body{
 a,
 a:link,
 a:visited {
-	color: #c6eaf7;
+	color: #63A6EE;
 	font-weight: bold;
 	text-decoration:none;
 }
@@ -147,6 +147,12 @@ img.center {
 	padding-top: 2px;
 	padding-left: 24px;
 	background: url(twitter.png) no-repeat 0 0px;
+}
+#coming-soon .facebook:before{
+	content: '';
+padding-top: 7px;
+padding-left: 70px;
+	background: url(facebook.png) no-repeat 0 0px;
 }
 #coming-soon .twitter{
 	padding-top: 5px;
