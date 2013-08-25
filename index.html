@@ -3,63 +3,45 @@
   <head>
     <link rel="icon" type="image/png" href="icon.png">  
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
       <meta name="description" content="Bruce Monroe Community Garden" />
       <meta name="keywords" content="garden, composting, bruce monroe, community garden, garden, local foods" />
-
       <title>Bruce Monroe Community Garden, Coming Soon!</title>
-
       <link rel="stylesheet" href="style.css">
-
-        <style type="text/css">
-
-        </style>
-
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+          $(document).ready(function(){
+ 
+            $('#submit').click(function(){
+ 
+              $.post("send.php", $("#subscribeform").serialize(),  function(response) {
+                $('#message').html(response).slideDown("slow");
+                //$('#success').hide('slow');
+              });
+              return false;
+ 
+            });
+ 
+          });
+        </script>
         </head>
 
         <body>
-
+<img alt="Building our site." src="background.jpg" id="background" /> 
           <div id="coming-soon">
 
             <h1>Bruce Monroe Community Garden</h1>
 
             <p>We are in the process of building our new site. Please come by again.</p>
-            <?php 
-            $action=$_REQUEST['action']; 
-            if ($action=="ggole.com")    /* display the contact form */ 
-            { 
-            ?> 
-            <form method="post">
+            <form action="" method="post" id="subscribeform" >
               <div id="subscribe">
-                <input type="text" placeholder="enter your email address..." name="email" type="email">
-                  <input type="submit" value="Submit">
+                <input type="text" placeholder="Please enter your email address to get updates." name="email" type="email" id="email">
+                  <input type="button" value="Submit" id="submit">
                     <div class="clear"></div>
                     </div>
+                    <div id="message"></div>
                     </form>
-
-
-
-                    <?php 
-                    }  
-                    else                
-                    { 
-                    $email=$_REQUEST['email']; 
-                    if (($email=="")) 
-                    { 
-                    echo "Email field is required, please fill the form again."; 
-                    } 
-                    else{         
-                    $from="From: $email"; 
-                    $subject="New subscriber"; 
-                    mail("youremail@yoursite.com", $email); 
-                    echo "Email sent!"; 
-                    } 
-                    }   
-                    ?> 
-
-                    <br>
-                      <a href="https://www.facebook.com/groups/162388827162856/" title="Connect with us on Facebook" class="facebook center"></a>
+<a href="https://www.facebook.com/groups/162388827162856/" title="Connect with us on Facebook" class="facebook center"></a>
                       </div>
-
+          
                       </body>
                       </html>
