@@ -9,24 +9,41 @@
       <link rel="stylesheet" href="style.css">
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script>
-          $(document).ready(function(){
- 
-            $('#submit').click(function(){
- 
-              $.post("send.php", $("#subscribeform").serialize(),  function(response) {
+          $(document).ready(function() {
+
+            $('#submit').click(function() {
+
+              $.post("send.php", $("#subscribeform").serialize(), function(response) {
                 $('#message').html(response).slideDown("slow");
                 //$('#success').hide('slow');
               });
               return false;
- 
+
             });
- 
+
           });
+        </script>
+        <script>
+          (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+              (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+          })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+          ga('create', 'UA-43484532-1', 'brucemonroegarden.org');
+          ga('send', 'pageview');
+
         </script>
         </head>
 
         <body>
-<img alt="Building our site." src="background.jpg" id="background" /> 
+          <img alt="Building our site." src="background.jpg" id="background" /> 
           <div id="coming-soon">
 
             <h1>Bruce Monroe Community Garden</h1>
@@ -40,8 +57,8 @@
                     </div>
                     <div id="message"></div>
                     </form>
-<a href="https://www.facebook.com/groups/162388827162856/" title="Connect with us on Facebook" class="facebook center"></a>
-                      </div>
-          
-                      </body>
-                      </html>
+                    <a href="https://www.facebook.com/groups/162388827162856/" title="Connect with us on Facebook" class="facebook center"></a>
+                    </div>
+
+                    </body>
+                    </html>
